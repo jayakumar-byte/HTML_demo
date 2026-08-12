@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Position Comparison: Static vs Fixed vs Sticky</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f2f6;
+    }
+
+    /* 1. FIXED ELEMENT: Pulled out of flow, pinned permanently to viewport */
+    .fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ff4757; /* Red */
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      z-index: 1000; /* Stays on very top layer */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Buffer layout to prevent fixed header from covering initial content */
+    .main-container {
+      margin-top: 60px; 
+      padding: 20px;
+    }
+
+    /* 2. STATIC ELEMENT: Normal layout flow, scrolls away naturally */
+    .static-box {
+      position: static;
+      background: #eccc68; /* Yellow */
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+
+    /* Parent track for the sticky element to slide within */
+    .scrolling-zone {
+      height: 1200px; /* Big height allows room to watch it stick */
+      background: #dfe4ea; /* Grey track */
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 500px; /* Forces page scrollability at the bottom */
+    }
+
+    /* 3. STICKY ELEMENT: Normal flow first, then turns fixed inside parent */
+    .sticky-bar {
+      position: sticky;
+      top: 55px; /* Sits right under the 55px red fixed header when scrolling */
+      background: #2ed573; /* Green */
+      color: white;
+      padding: 20px;
+      font-weight: bold;
+      border-radius: 4px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    p {
+      line-height: 1.6;
+      color: #2f3542;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FIXED SECTION
+  <div class="fixed-nav">
+    🔴 POSITION: FIXED — I never move, no matter how far down you scroll!
+  </div>
+
+  <div class="main-container">
+    
+    <!-- STATIC SECTION -->
+    <div class="static-box">
+      <h3>🟡 POSITION: STATIC</h3>
+      <p>I am part of the normal page flow. As soon as you start scrolling downward, I will instantly roll upwards off the screen like a standard web element.</p>
+    </div>
+
+    <!-- STICKY PARENT SECTION -->
+    <div class="scrolling-zone">
+      <h3>Parent Container (Grey Area)</h3>
+      <p>The green bar below belongs to this grey box. Watch what happens when it hits the top of the browser window...</p>
+      
+      <!-- STICKY ELEMENT -->
+      <div class="sticky-bar">
+        🟢 POSITION: STICKY — I scroll normally, but I clamp under the red bar until my grey parent box leaves!
+      </div>
+
+      <p style="margin-top: 300px;">Keep scrolling down! The green bar stays locked right under the red bar.</p>
+      <p style="margin-top: 400px;">Almost at the end of the grey parent track...</p>
+    </div>
+
+    <!-- BOTTOM BOUNDARY -->
+    <h3>End of Parent Track</h3>
+    <p>Now that the grey background block has completely scrolled away, the green sticky bar releases and scrolls away with it. Only the red fixed bar remains!</p>
+
+  </div> -->
+
+</body>
+</html>

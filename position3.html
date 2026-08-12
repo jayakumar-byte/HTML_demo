@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .con{
+    padding: 25px;
+    padding-left: 50px;
+    background-color: rgb(145, 211, 235);
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .con1{
+    height: 200px;
+    width: 200px;
+    background-image: url(/Images/ocean.jpg);
+    background-size: cover;
+    border-radius: 50%;
+  }
+  .con2{
+    display: flex;
+    column-gap: 50px;
+    position: relative;
+    right: 150px;
+    top: 50px;
+  }
+
+  .con2>button{
+    height: 25px;
+  }
+  .con2>button:hover{
+    transform: translate(0px,10px);
+    transition-duration: 3s;
+    background-color: red;
+  }
+</style>
+<body>
+  <div class="con">
+    <div class="con1">
+    </div>
+    <div class="con2">
+      <button><a href="">HOME</a></button>
+      <button><a href="">HOME</a></button>
+      <button><a href="">HOME</a></button>
+      <button><a href="">HOME</a></button>
+      <button><a href="">HOME</a></button>
+    </div>
+  </div>
+</body>
+</html>
